@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <label>Search:
+    <input #searchMovie />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="search(searchMovie.value); searchMovie.value=''">
+    search
+  </button>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" (click)="sort('title')">Title</th>
+      <th scope="col">Year</th>
+      <th scope="col">BoxOffice</th>
+      <th scope="col">ImdbRating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of movies">
+      <td>{{movie.title}}</td>
+      <td>{{movie.year}}</td>
+      <td>{{movie.boxOffice}}</td>
+      <td>{{movie.imdbRating}}</td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  
+<button *ngfor="let pageNumber of pageIndex" (click)="getfetchMovies(pageNumber);"> {{pageNumber}}</button>
+<button  (click)="getfetchMovies(0);">
+  1
+</button>
+<button  (click)="getfetchMovies(1);">
+  2
+</button>
+</div>
+<router-outlet></router-outlet>
