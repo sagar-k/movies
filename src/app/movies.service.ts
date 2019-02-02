@@ -29,7 +29,7 @@ export class MoviesService {
     let requiredPage = index +  pageSize;
 
     if(requiredPage >  MOVIES.length) {
-      return;
+      return MOVIES.slice(index, (index + pageSize);
     }
   }
 
@@ -50,5 +50,5 @@ export class MoviesService {
   sort(column): Movie[] {
     this.col = column; 
     return MOVIES.sort(this.compare)
-  }
+  } 
 }

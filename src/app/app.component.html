@@ -11,7 +11,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col" (click)="sort(title)">Title</th>
+      <th scope="col" (click)="sort('title')">Title</th>
       <th scope="col">Year</th>
       <th scope="col">BoxOffice</th>
       <th scope="col">ImdbRating</th>
@@ -26,4 +26,7 @@
     </tr>
   </tbody>
 </table>
+<button (click)="search(1);">
+  page1
+</button>
 <router-outlet></router-outlet>

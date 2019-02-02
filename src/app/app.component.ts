@@ -29,4 +29,9 @@ export class AppComponent implements OnInit{
   sort(column): void {
     this.movies = this.moviesService.sort(column);
   }
+
+  getfetchMovies(index): void {
+
+    this.movies = this.moviesService.getfetchMovies(index,2);
+  }
 }
